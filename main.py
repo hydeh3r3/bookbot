@@ -10,3 +10,13 @@ def count_words():
         return len(words)
 
 print(count_words())
+
+def count_characters():
+    char_counts = {}
+    with open("books/frankenstein.txt") as f:
+        for char in f.read().lower():
+            if char.isalpha():
+                char_counts[char] = char_counts.get(char, 0) + 1
+    return char_counts
+
+print(count_characters())
